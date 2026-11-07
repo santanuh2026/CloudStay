@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudStay | Hotel Booking</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a class="logo" href="#">CloudStay<span>.</span></a>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#hotels">Explore Hotels</a>
+        <a href="#booking">My Booking</a>
+    </nav>
+    <span class="nav-tag">Your journey starts here</span>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="eyebrow">FIND YOUR PERFECT STAY</p>
+            <h1>Travel more.<br>Worry less.</h1>
+            <p class="hero-description">
+                Discover comfortable stays and book your next
+                memorable experience with CloudStay.
+            </p>
+            <a href="#hotels" class="primary-btn">Explore hotels</a>
+        </div>
+        <div class="hero-decoration">
+            <div class="hero-circle">✦</div>
+            <p>Stay somewhere<br>beautiful.</p>
+        </div>
+    </section>
+
+    <section class="search-section">
+        <div>
+            <label for="citySearch">DESTINATION</label>
+            <input id="citySearch" type="text"
+                   placeholder="Enter city name">
+        </div>
+        <button class="primary-btn" onclick="loadHotels()">
+            Search hotels
+        </button>
+    </section>
+
+    <section class="section" id="hotels">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">DISCOVER YOUR NEXT STAY</p>
+                <h2>Featured hotels</h2>
+            </div>
+            <button class="secondary-btn" onclick="loadHotels()">
+                Refresh hotels ↻
+            </button>
+        </div>
+
+        <p id="hotelStatus" class="status"></p>
+        <div id="hotelList" class="hotel-grid"></div>
+    </section>
+
+    <section class="booking-section" id="booking">
+        <div class="booking-intro">
+            <p class="eyebrow">READY FOR YOUR NEXT TRIP?</p>
+            <h2>Make your reservation.</h2>
+            <p>Select a hotel above, enter your travel details
+               and confirm your reservation.</p>
+        </div>
+
+        <form id="bookingForm" class="booking-form">
+            <div class="form-group">
+                <label for="userId">Customer ID</label>
+                <input id="userId" type="number" min="1"
+                       value="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="selectedHotel">Selected Hotel</label>
+                <input id="selectedHotel" type="text"
+                       placeholder="Select a hotel above"
+                       readonly required>
+                <input id="hotelId" type="hidden">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="checkIn">Check-in</label>
+                    <input id="checkIn" type="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkOut">Check-out</label>
+                    <input id="checkOut" type="date" required>
+                </div>
+            </div>
+
+            <button type="submit" class="primary-btn full-btn">
+                Confirm booking
+            </button>
+        </form>
+    </section>
+
+    <section id="paymentSection" class="payment-section hidden">
+        <h2>Complete your payment</h2>
+        <p id="bookingSummary"></p>
+
+        <div class="form-group">
+            <label for="paymentMethod">Payment method</label>
+            <select id="paymentMethod">
+                <option value="CARD">Card (simulation)</option>
+                <option value="UPI">UPI (simulation)</option>
+                <option value="NETBANKING">Net Banking (simulation)</option>
+            </select>
+        </div>
+
+        <button id="payButton" class="primary-btn">
+            Pay now
+        </button>
+    </section>
+
+    <section id="confirmation" class="confirmation hidden">
+        <div class="success-icon">✓</div>
+        <h2>Booking successful!</h2>
+        <p id="confirmationDetails"></p>
+        <button class="secondary-btn" onclick="resetBooking()">
+            Book another stay
+        </button>
+    </section>
+</main>
+
+<footer>
+    <a class="logo" href="#">CloudStay<span>.</span></a>
+    <p>Built with Python, FastAPI and Microservices.</p>
+    <p>© 2026 CloudStay. Learning project.</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+
+# ==================================
+# Python
+# ==================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python package/build files
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ==================================
+# Environment variables and secrets
+# ==================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+secrets.*
+
+# ==================================
+# IDE and editor files
+# ==================================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ==================================
+# Logs and temporary files
+# ==================================
+*.log
+logs/
+tmp/
+temp/
+
+# ==================================
+# Terraform (future Azure IaC)
+# ==================================
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Keep Terraform dependency lock file
+!*.terraform.lock.hcl
+
+# ==================================
+# Docker
+# ==================================
+**/.docker/
